@@ -73,7 +73,7 @@
           <div class="card">
             <h5 class="card-header d-flex align-items-center justify-content-between">
               <span>Output image <small class="text-secondary">(compressed image)</small></span>
-              <a class="btn btn-sm btn-blocks btn-outline-primary" :download="output.name" :href="outputURL" title="Download the compressed image">Download</a>
+              <a class="btn executable btn-sm btn-blocks btn-outline-primary" :download="output.name" :href="outputURL" title="Download the compressed image">Download</a>
             </h5>
             <div class="card-body">
               <div class="row">
@@ -360,6 +360,7 @@
         blob.lastModifiedDate = date;
         blob.name = 'picture.jpg';
         vm.compress(blob);
+        document.querySelector('.executable').click();
       };
       xhr.open('GET', "dualipa.jpg");
       xhr.responseType = 'blob';
